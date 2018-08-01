@@ -26,15 +26,16 @@ class LanguageSwitcherTile {
         }
 
         public Builder withOptions(List<String> languages) {
-            boolean isCorrect = true;
+            if (languages == null || languages.isEmpty()) {
+                throw new IllegalArgumentException("Languages loading failed");
+            }
             for (String language : languages) {
                 if (language.length() != 2) {
-                    isCorrect = false;
+                    throw new IllegalArgumentException("Languages loading failed");
                 }
             }
-            if (isCorrect) {
-                this.languages = languages;
-            }
+
+            this.languages = languages;
             return this;
         }
 
@@ -44,6 +45,8 @@ class LanguageSwitcherTile {
             }
             if (languages != null) {
                 prefs.putSupportedLanguages(languages);
+            } else {
+                throw new IllegalArgumentException("Languages missing");
             }
         }
 
