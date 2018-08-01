@@ -25,14 +25,14 @@ public class LanguageTileService extends TileService {
 
         prefs = LanguagePrefs.getInstance(this);
         selector = new LanguageSelector(prefs);
-        listener = (sharedPreferences, key) -> configureService(prefs.getSupportedLanguages(), prefs.getDefaultLanguage(), prefs.getTileWarning());
+        listener = (sharedPreferences, key) -> configureService(prefs.getSupportedLanguages(), prefs.getTileWarning());
 
         return super.onBind(intent);
     }
 
     @Override
     public void onStartListening() {
-        configureService(prefs.getSupportedLanguages(), prefs.getDefaultLanguage(), prefs.getTileWarning());
+        configureService(prefs.getSupportedLanguages(), prefs.getTileWarning());
         prefs.registerListener(listener);
     }
 
@@ -50,8 +50,9 @@ public class LanguageTileService extends TileService {
         }
     }
 
-    private void configureService(List<String> supportedLanguages, String defaultLanguage, String warning) {
-        if (supportedLanguages != null && defaultLanguage != null) {
+
+    private void configureService(List<String> supportedLanguages, String warning) {
+        if (supportedLanguages != null) {
             enable();
             if (warning != null) {
                 this.warning = warning;

@@ -15,7 +15,6 @@ class LanguageSwitcherTile {
 
         private String warning;
         private List<String> languages;
-        private String defaultLanguage;
 
         private Builder(Context context) {
             prefs = LanguagePrefs.getInstance(context);
@@ -39,22 +38,12 @@ class LanguageSwitcherTile {
             return this;
         }
 
-        public Builder withDefault(String defaultLanguage) {
-            if (defaultLanguage.length() == 2 && languages.contains(defaultLanguage)) {
-                this.defaultLanguage = defaultLanguage;
-            }
-            return this;
-        }
-
         public void enable() {
             if (warning != null) {
                 prefs.putTileWarning(warning);
             }
             if (languages != null) {
                 prefs.putSupportedLanguages(languages);
-            }
-            if (defaultLanguage != null) {
-                prefs.putDefaultLanguage(defaultLanguage);
             }
         }
 

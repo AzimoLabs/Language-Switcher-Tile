@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.enableWithoutWarning)
     public void enableWithoutWarning() {
-        LanguageSwitcherTile.builder(this).withOptions(Arrays.asList("en", "de", "es", "fr", "it", "pl", "pt", "ro", "ru")).withDefault("en").enable();
+        LanguageSwitcherTile.builder(this).withOptions(Arrays.asList("en", "de", "es", "fr", "it", "pl", "pt", "ro", "ru")).enable();
     }
 
     @OnClick(R.id.enableWithWarning)
     public void enableWithWarning() {
-        LanguageSwitcherTile.builder(this).withOptions(Arrays.asList("en", "de", "es", "fr", "it", "pl", "pt", "ro", "ru")).withDefault("en").withWarning("My warning").enable();
+        LanguageSwitcherTile.builder(this).withOptions(Arrays.asList("en", "de", "es", "fr", "it", "pl", "pt", "ro", "ru")).withWarning("My warning").enable();
     }
 
     @OnClick(R.id.disable)

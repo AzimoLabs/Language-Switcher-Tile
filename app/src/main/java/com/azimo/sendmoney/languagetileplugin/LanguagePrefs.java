@@ -12,7 +12,6 @@ public class LanguagePrefs {
 
     private static final String LOCALE_NAMESPACE = "LOCALE";
     private static final String PREVIOUS_LOCALE = "previous_language";
-    private static final String DEFAULT_LANGUAGE = "default_language";
     private static final String TILE_WARNING = "tile_warning";
     private static final String SUPPORTED_LANGUAGES = "supported_language";
     private static final String SEPARATOR = ",";
@@ -53,14 +52,6 @@ public class LanguagePrefs {
         return preferences.getString(PREVIOUS_LOCALE, null);
     }
 
-    public void putDefaultLanguage(String language) {
-        preferences.edit().putString(DEFAULT_LANGUAGE, language).apply();
-    }
-
-    public String getDefaultLanguage() {
-        return preferences.getString(DEFAULT_LANGUAGE, null);
-    }
-
     public void putTileWarning(String warning) {
         preferences.edit().putString(TILE_WARNING, warning).apply();
     }
@@ -79,10 +70,11 @@ public class LanguagePrefs {
     }
 
     public List<String> getSupportedLanguages() {
-        String string = preferences.getString(SUPPORTED_LANGUAGES, null);
-        List<String> result = new ArrayList<>();
-        if (string != null) {
-            result.addAll(Arrays.asList(string.split(SEPARATOR)));
+        String languages = preferences.getString(SUPPORTED_LANGUAGES, null);
+        List<String> result = null;
+        if (languages != null) {
+            result = new ArrayList<>();
+            result.addAll(Arrays.asList(languages.split(SEPARATOR)));
         }
         return result;
     }
