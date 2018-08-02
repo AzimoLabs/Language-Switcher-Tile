@@ -69,6 +69,7 @@ public class LanguageTileService extends TileService {
 
     public void enable() {
         getQsTile().setState(Tile.STATE_ACTIVE);
+        getQsTile().setLabel(prefs.getLastLanguage().toUpperCase());
         getQsTile().updateTile();
     }
 
