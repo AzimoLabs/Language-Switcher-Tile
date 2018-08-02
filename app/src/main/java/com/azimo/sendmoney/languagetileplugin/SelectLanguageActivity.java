@@ -53,4 +53,9 @@ public class SelectLanguageActivity extends Activity {
             Toast.makeText(this, prefs.getTileWarning(), Toast.LENGTH_LONG).show();
         }
     }
+
+    public void showNoLanguagesMessage() {
+        tvNoLanguages.setVisibility(View.VISIBLE);
+        lvLanguages.setVisibility(View.GONE);
+    }
 }
