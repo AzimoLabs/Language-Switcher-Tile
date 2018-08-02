@@ -18,7 +18,7 @@ adb shell pm grant com.azimo.sendmoney.languagetiletileplugin android.permission
 
 ### How to use
 
-When language switcher tile is enabled click on it and allow it to modify system settings. Then open the quick settings panel, edit it and drop language switcher tile into it. Once the tile is enabled you can change your device language in two ways:
+When language switcher tile is enabled click on it and allow it to modify system settings. Then open the quick settings panel, edit it and drop language switcher tile into it. Now you can change your device language in two ways:
 
 1. Click language switch tile to select next language from a list of supported languages.
 2. Long click language switch tile to open supported languages dialog and select language.
