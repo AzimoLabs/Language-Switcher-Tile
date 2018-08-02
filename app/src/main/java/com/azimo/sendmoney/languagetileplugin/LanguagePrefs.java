@@ -41,7 +41,8 @@ public class LanguagePrefs {
     }
 
     public void clear() {
-        preferences.edit().clear().apply();
+        preferences.edit().remove(SUPPORTED_LANGUAGES).apply();
+        preferences.edit().remove(TILE_WARNING).apply();
     }
 
     public void putLastLanguage(String language) {

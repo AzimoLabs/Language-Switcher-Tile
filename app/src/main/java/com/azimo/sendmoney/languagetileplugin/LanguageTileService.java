@@ -9,6 +9,7 @@ import android.service.quicksettings.TileService;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 
 import static android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS;
 
@@ -18,21 +19,19 @@ public class LanguageTileService extends TileService {
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private LanguageSelector selector;
 
-    private String warning;
-
     @Override
     public IBinder onBind(Intent intent) {
 
         prefs = LanguagePrefs.getInstance(this);
         selector = new LanguageSelector(prefs);
-        listener = (sharedPreferences, key) -> configureService(prefs.getSupportedLanguages(), prefs.getTileWarning());
+        listener = (sharedPreferences, key) -> configureService(prefs.getSupportedLanguages());
 
         return super.onBind(intent);
     }
 
     @Override
     public void onStartListening() {
-        configureService(prefs.getSupportedLanguages(), prefs.getTileWarning());
+        configureService(prefs.getSupportedLanguages());
         prefs.registerListener(listener);
     }
 
@@ -51,12 +50,9 @@ public class LanguageTileService extends TileService {
     }
 
 
-    private void configureService(List<String> supportedLanguages, String warning) {
+    private void configureService(List<String> supportedLanguages) {
         if (supportedLanguages != null) {
             enable();
-            if (warning != null) {
-                this.warning = warning;
-            }
         } else {
             disable();
         }
@@ -69,7 +65,11 @@ public class LanguageTileService extends TileService {
 
     public void enable() {
         getQsTile().setState(Tile.STATE_ACTIVE);
-        getQsTile().setLabel(prefs.getLastLanguage().toUpperCase());
+        if (prefs.getLastLanguage() != null) {
+            getQsTile().setLabel(prefs.getLastLanguage().toUpperCase());
+        } else {
+            getQsTile().setLabel(Locale.getDefault().getLanguage().toUpperCase());
+        }
         getQsTile().updateTile();
     }
 
@@ -87,7 +87,7 @@ public class LanguageTileService extends TileService {
     }
 
     private void showWarning() {
-        if (warning != null) {
+        if (prefs.getTileWarning() != null) {
             Toast.makeText(this, prefs.getTileWarning(), Toast.LENGTH_LONG).show();
         }
     }
