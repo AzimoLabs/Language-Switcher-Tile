@@ -66,7 +66,9 @@ public class LanguagePrefs {
         for (String language : languages) {
             result.append(language).append(SEPARATOR);
         }
-        result.deleteCharAt(result.length() - 1);
+        if (result.length() > 0) {
+            result.deleteCharAt(result.length() - 1);
+        }
         preferences.edit().putString(SUPPORTED_LANGUAGES, result.toString()).apply();
     }
 
