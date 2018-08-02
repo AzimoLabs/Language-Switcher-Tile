@@ -27,11 +27,11 @@ class LanguageSwitcherTile {
 
         public Builder withOptions(List<String> languages) {
             if (languages == null || languages.isEmpty()) {
-                throw new IllegalArgumentException("Languages loading failed");
+                throw new IllegalArgumentException("Languages loading failed: list is empty or not initialized.");
             }
             for (String language : languages) {
                 if (language.length() != 2) {
-                    throw new IllegalArgumentException("Languages loading failed");
+                    throw new IllegalArgumentException("Languages loading failed: wrong language shortcut format. (" + language + ")");
                 }
             }
 
@@ -46,7 +46,7 @@ class LanguageSwitcherTile {
             if (languages != null) {
                 prefs.putSupportedLanguages(languages);
             } else {
-                throw new IllegalArgumentException("Languages missing");
+                throw new IllegalArgumentException("Enabling failed: languages missing");
             }
         }
 
