@@ -2,6 +2,7 @@ package com.azimo.sendmoney.languagetileplugin;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,6 +35,16 @@ public class SelectLanguageActivity extends Activity {
         ButterKnife.bind(this);
 
         presenter.init();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (Settings.System.canWrite(this) && prefs.getSupportedLanguages() != null) {
+            showSupportedLanguages(prefs.getSupportedLanguages());
+        } else {
+            showNoLanguagesMessage();
+        }
     }
 
     public void showSupportedLanguages(List<String> supportedLanguages) {
