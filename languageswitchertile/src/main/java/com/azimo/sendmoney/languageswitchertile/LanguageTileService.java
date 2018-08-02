@@ -1,4 +1,4 @@
-package com.azimo.sendmoney.languagetileplugin;
+package com.azimo.sendmoney.languageswitchertile;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +13,7 @@ import java.util.Locale;
 
 import static android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS;
 
-public class LanguageTileService extends TileService {
+class LanguageTileService extends TileService {
 
     private LanguagePrefs prefs;
     private SharedPreferences.OnSharedPreferenceChangeListener listener;

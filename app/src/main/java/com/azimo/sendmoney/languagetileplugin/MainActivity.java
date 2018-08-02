@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.azimo.sendmoney.languageswitchertile.LanguageSwitcherTile;
+
 import java.util.Arrays;
 
 import butterknife.ButterKnife;
@@ -16,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
     }
 
     @OnClick(R.id.enableWithWarning)

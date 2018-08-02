@@ -1,4 +1,4 @@
-package com.azimo.sendmoney.languagetileplugin;
+package com.azimo.sendmoney.languageswitchertile;
 
 import android.content.Intent;
 import android.provider.Settings;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import static android.provider.Settings.ACTION_MANAGE_WRITE_SETTINGS;
 
-public class SelectLanguageActivityPresenter {
+class SelectLanguageActivityPresenter {
 
     private SelectLanguageActivity view;
     private LanguagePrefs prefs;

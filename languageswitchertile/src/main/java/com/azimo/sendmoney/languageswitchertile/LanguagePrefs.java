@@ -1,4 +1,4 @@
-package com.azimo.sendmoney.languagetileplugin;
+package com.azimo.sendmoney.languageswitchertile;
 
 import android.content.Context;
 import android.content.SharedPreferences;

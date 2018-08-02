@@ -1,10 +1,10 @@
-package com.azimo.sendmoney.languagetileplugin;
+package com.azimo.sendmoney.languageswitchertile;
 
 import android.content.Context;
 
 import java.util.List;
 
-class LanguageSwitcherTile {
+public class LanguageSwitcherTile {
 
     public static Builder builder(Context context) {
         return new Builder(context);

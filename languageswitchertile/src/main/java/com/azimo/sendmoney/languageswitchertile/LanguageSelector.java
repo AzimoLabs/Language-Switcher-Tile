@@ -1,4 +1,4 @@
-package com.azimo.sendmoney.languagetileplugin;
+package com.azimo.sendmoney.languageswitchertile;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Locale;
 
 import io.reactivex.Observable;
 
-public class LanguageSelector {
+class LanguageSelector {
 
     private LanguagePrefs prefs;
 

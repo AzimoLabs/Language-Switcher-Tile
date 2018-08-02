@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">Language Switcher</string>
-    <string name="language_header">Language</string>
-    <string name="no_languages_to_display">No languages to display</string>
-    <string name="add_some_languages">Add some languages!</string>
 </resources>

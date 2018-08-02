@@ -1,4 +1,4 @@
-package com.azimo.sendmoney.languagetileplugin;
+package com.azimo.sendmoney.languageswitchertile;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 
-public class SelectLanguageActivity extends Activity {
+class SelectLanguageActivity extends Activity {
 
-    @BindView(R.id.lvLanguages)
+    @BindView(R2.id.lvLanguages)
     ListView lvLanguages;
-    @BindView(R.id.tvNoLanguages)
+    @BindView(R2.id.tvNoLanguages)
     TextView tvNoLanguages;
 
     LanguagePrefs prefs = LanguagePrefs.getInstance(this);
@@ -54,7 +54,7 @@ public class SelectLanguageActivity extends Activity {
         tvNoLanguages.setVisibility(View.GONE);
     }
 
-    @OnItemClick(R.id.lvLanguages)
+    @OnItemClick(R2.id.lvLanguages)
     public void selectLanguage(int position) {
         presenter.selectLanguage(lvLanguages.getItemAtPosition(position).toString());
     }
