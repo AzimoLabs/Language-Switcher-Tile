@@ -1,7 +1,7 @@
 # Language Switcher Tile
 Quick settings tile that allows you to easily change your device language.
 
-| ![quick_settings_panel_expanded.png](screenshots/quick_settings_panel_expanded.png){:height="36px" width="36px"}. |
+| ![quick_settings_panel_expanded.png](screenshots/quick_settings_panel_expanded.png) | width=100 |
 |:--:| 
 | *Quick settings panel expanded* |
 
