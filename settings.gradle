@@ -1,1 +1,1 @@
-include ':app', ':languageswitchertile'
+include ':example', ':languageswitchertile'
