@@ -8,7 +8,7 @@ Quick settings tile that allows you to easily change your device language.
 ### Installation
 
 1. Import Language Switcher tile to your app.
-2. Use LanguageSwitcherTile.Builder to enable tile with specified configuration. 
+2. Use ```LanguageSwitcherTile.Builder``` to enable tile with specified configuration. 
 3. Install the app on your device.
 4. Grant CHANGE_CONFIGURATION permission using following method:
 
