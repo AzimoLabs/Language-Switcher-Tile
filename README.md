@@ -13,7 +13,7 @@ Quick settings tile that allows you to easily change your device language.
 4. Grant ```CHANGE_CONFIGURATION``` permission using following method:
 
 ```
-adb shell pm grant com.azimo.sendmoney.languagetiletileplugin android.permission.CHANGE_CONFIGURATION
+adb shell pm grant  com.azimo.sendmoney.languageswitchertile android.permission.CHANGE_CONFIGURATION
 ```
 
 ### How to use
